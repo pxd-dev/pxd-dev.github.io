@@ -1,0 +1,3 @@
+Apartados separados
+Slideshow en la lista de proyectos
+Implementar esto con JavaScript (?)
