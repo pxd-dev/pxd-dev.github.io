@@ -61,7 +61,7 @@
                 accessibility: true,
                 adaptiveheight: false,
                 autoplay: false,
-                autoplayspeed: 5000,
+                autoplayspeed: 10000,
                 arrows: false,
                 asnavfor: null,
                 appendarrows: $(this),
