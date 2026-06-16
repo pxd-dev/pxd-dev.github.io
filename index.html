@@ -1,123 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Welcome to PixelDubbing!">
-    <meta name="keywords" content="PixelDubbing">
-
-    <!-- Title Page-->
-    <title>PixelDubbing</title>
-
-    <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/themify-font/themify-icons.css" rel="stylesheet" media="all">
-    <!-- Base fonts of theme-->
-    <link href="css/poppins-font.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animate.css/animate.min.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/main.min.css" rel="stylesheet" media="all">
-
-    <!--Favicons-->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PixelDubbing — professional dubbing, translation, adaptation and audio post-production for Latin America and global markets." />
+  <title>PixelDubbing | Dubbing &amp; Audiovisual Localization</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem("pixel-theme-v2");
+      document.documentElement.setAttribute("data-theme", t === "dark" ? "dark" : "light");
+      var l = localStorage.getItem("pixel-lang");
+      var lang = l === "es" || l === "pt" ? l : "en";
+      document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=20260616c" />
 </head>
-
-<body class="animsition js-preloader">
-    <div class="page-wrapper">
-        <!-- MAIN-->
-        <main id="main">
-            <!-- PAGE LINE-->
-            <div>
-                <div class="container">
-                    <div class="page-line__inner">
-                        <div class="page-col"></div>
-                        <div class="page-col"></div>
-                        <div class="page-col"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- END PAGE LINE-->
-
-            <!-- LANDING-->
-            <section class="section landing-page">
-                <div class="wrap wrap--w1790">
-                    <div class="container-fluid">
-                        <article class="landing">
-                            <header class="entry-header text-center">
-                                <h2 class="entry-title display-4" style="color: #333; font-weight: bold;">Welcome to PixelDubbing</h2>
-                                <h2 class="h4" style="color: #333;">Before we start, choose your language</h2>
-                            </header>
-                            <div>
-                                <div class="row" style="justify-content: center;">
-                                    <div class="col-md-5" style="padding: 0;">
-                                        <div class="media-landing">
-                                            <a href="https://www.pixeldubbing.com/english">
-                                                <img src="images/flag_unitedstates.png" alt="English-US" width="50%" height="50%" style="display: block; margin: 0 auto 20px;">
-                                            </a>
-                                            <h4 style="margin-top: 10px; text-align: center;">
-                                                <a href="https://www.pixeldubbing.com/english" style="color: #333;">English (America)</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5" style="padding: 0;">
-                                        <div class="media-landing">
-                                            <a href="https://www.pixeldubbing.com/spanish">
-                                                <img src="images/flag_mexico.png" alt="Spanish-LA" width="50%" height="50%" style="display: block; margin: 0 auto 20px;">
-                                            </a>
-                                            <h4 style="margin-top: 10px; text-align: center;">
-                                                <a href="https://www.pixeldubbing.com/spanish" style="color: #333;">Español (Latinoamérica)</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <header style="margin-top: 10px; text-align: center;">
-                                <img src="images/pxdlogo_black.png" alt="PixelDubbing" width="250px" height="250px">
-                            </header>
-                        </article>
-                    </div>
-                </div>
-            </section>            
-            <!-- END LANDING-->
-        </main>
-        <!-- END MAIN-->
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="logo" data-i18n-aria="logo.aria" aria-label="PixelDubbing home">
+        <img src="assets/resources/PIXEL_LOGO.png" alt="PixelDubbing" class="logo-img" width="200" height="48" />
+      </a>
+      <button class="nav-toggle" type="button" data-i18n-aria="menu.open" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#servicios" data-i18n="nav.services">Services</a></li>
+          <li><a href="#proyectos" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#muestras" data-i18n="nav.samples">Samples</a></li>
+          <li><a href="#clientes" data-i18n="nav.clients">Clients</a></li>
+          <li><a href="#contacto" data-i18n="nav.contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="header-controls">
+        <div class="nav-lang header-lang">
+          <button type="button" class="lang-btn" aria-haspopup="true">EN</button>
+          <ul class="lang-menu">
+            <li><a href="#" data-lang="en" class="is-active" aria-current="true" data-i18n="lang.en">English</a></li>
+            <li><a href="#" data-lang="es" data-i18n="lang.es">Spanish</a></li>
+            <li><a href="#" data-lang="pt" data-i18n="lang.pt">Portuguese</a></li>
+          </ul>
+        </div>
+        <label class="theme-switch" title="Toggle theme">
+          <input type="checkbox" id="theme-toggle" class="theme-switch__input" checked aria-label="Light mode" />
+          <span class="theme-switch__track" aria-hidden="true">
+            <span class="theme-switch__icon theme-switch__icon--moon">☾</span>
+            <span class="theme-switch__icon theme-switch__icon--sun">☀</span>
+            <span class="theme-switch__thumb"></span>
+          </span>
+        </label>
+      </div>
+      <div class="header-social">
+        <a href="https://x.com/PixelDubbing" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/pixeldubbing" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+      </div>
     </div>
+  </header>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/slick/slick.min.js"></script>
-    <script src="vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/jquery.counterup/jquery.counterup.min.js"></script>
-    <script src="vendor/isotope/isotope.pkgd.min.js"></script>
-    <script src="vendor/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="vendor/matchHeight/jquery.matchHeight-min.js"></script>
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/sweetalert/sweetalert.min.js"></script>
-    <script src="vendor/noUiSlider/nouislider.min.js"></script>
+  <main>
+    <section class="moment" id="inicio" data-hero-scene aria-label="Inicio">
+      <div class="hero-carousel" aria-hidden="true">
+        <div class="hero-carousel__slides">
+          <figure class="hero-carousel__slide is-active">
+            <img src="assets/resources/carrousel_img1.webp" alt="" width="1920" height="1080" decoding="async" fetchpriority="high" />
+          </figure>
+          <figure class="hero-carousel__slide">
+            <img src="assets/resources/carrousel_img2.webp" alt="" width="1920" height="1080" decoding="async" />
+          </figure>
+          <figure class="hero-carousel__slide">
+            <img src="assets/resources/carrousel_img3.png" alt="" width="1920" height="1080" decoding="async" />
+          </figure>
+          <figure class="hero-carousel__slide">
+            <img src="assets/resources/carrusel_img4.jpg" alt="" width="1920" height="1080" decoding="async" />
+          </figure>
+        </div>
+        <div class="hero-carousel__overlay"></div>
+      </div>
+      <div class="container moment-inner">
+        <div class="moment-logo">
+          <img src="assets/resources/PIXEL_LOGO.png" alt="PixelDubbing" class="moment-logo-img" width="240" height="58" />
+        </div>
+        <h2 class="moment-title" data-i18n-html="moment.title">
+          Materializing<br />
+          <span class="moment-accent">your ideas</span>
+        </h2>
+        <p class="moment-lead" data-i18n="moment.lead">
+          At PixelDubbing we transform productions from around the world into authentic experiences for Latin America, with voices, emotions and adaptations that connect naturally with every audience. Because the best stories are not only understood — they are felt.
+        </p>
+        <p class="moment-hint">
+          <span class="moment-hint-pulse" aria-hidden="true"></span>
+          <span data-i18n="moment.hint">Every click is a new story waiting to be told.</span>
+        </p>
+        <div class="moment-actions">
+          <a href="#servicios" class="btn btn--glow" data-i18n="moment.cta1">Explore services</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <section class="stats" aria-label="Cifras">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label" data-i18n="stats.projects">Localized projects</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label" data-i18n="stats.years">Years of experience</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="300">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label" data-i18n="stats.talents">Voice talents</p>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <h2 class="section-title" data-i18n="services.title">Services</h2>
+          <div class="title-line title-line--center"></div>
+          <p class="section-lead" data-i18n="services.lead">End-to-end audiovisual localization solutions, from script to final master.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-num">01</span>
+            <img class="service-icon" src="assets/resources/01_traduccion_adaptacion.png" alt="" width="56" height="56" loading="lazy" decoding="async" />
+            <h3 data-i18n="services.s1.title">Translation &amp; Adaptation</h3>
+            <p data-i18n="services.s1.desc">We respect the essence of your content, ensuring it meets the guidelines and quality standards every project deserves.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-num">02</span>
+            <img class="service-icon" src="assets/resources/02_casting_grabacion.png" alt="" width="56" height="56" loading="lazy" decoding="async" />
+            <h3 data-i18n="services.s2.title">Casting &amp; Recording</h3>
+            <p data-i18n="services.s2.desc">Established actors, singers and new talent. Theatrical sync and high-level performances to captivate your audience.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-num">03</span>
+            <img class="service-icon" src="assets/resources/03_mezcla_512.png" alt="" width="56" height="56" loading="lazy" decoding="async" />
+            <h3 data-i18n="services.s3.title">Post-production &amp; Mixing</h3>
+            <p data-i18n="services.s3.desc">Voice integration with M&amp;E from stereo (2.0) to surround (7.1), with microphone cleanup and matching.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-num">04</span>
+            <img class="service-icon" src="assets/resources/04_subtitulado.png" alt="" width="56" height="56" loading="lazy" decoding="async" />
+            <h3 data-i18n="services.s4.title">Subtitling</h3>
+            <p data-i18n="services.s4.desc">Subtitles for cinema, streaming and social, with precise timing and platform-specific styles.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-num">05</span>
+            <img class="service-icon" src="assets/resources/05_voice_over.png" alt="" width="56" height="56" loading="lazy" decoding="async" />
+            <h3 data-i18n="services.s5.title">Voice Over</h3>
+            <p data-i18n="services.s5.desc">Narration for documentaries, commercials, video games and corporate content.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-num">06</span>
+            <img class="service-icon" src="assets/resources/06_control_calidad.png" alt="" width="56" height="56" loading="lazy" decoding="async" />
+            <h3 data-i18n="services.s6.title">Quality Control</h3>
+            <p data-i18n="services.s6.desc">Linguistic, technical and lip-sync review before final delivery to the client.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="proyectos">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+          <div class="title-line title-line--center"></div>
+        </div>
+        <div class="projects-carousel-wrap">
+          <button type="button" class="projects-arrow projects-arrow--prev" data-i18n-aria="projects.prev" aria-label="Previous projects">&lsaquo;</button>
+          <div class="projects-carousel-viewport" id="projects-viewport">
+            <div class="projects-carousel-track" id="projects-track" aria-live="off"></div>
+          </div>
+          <button type="button" class="projects-arrow projects-arrow--next" data-i18n-aria="projects.next" aria-label="Next projects">&rsaquo;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--samples" id="muestras">
+      <div class="container">
+        <header class="samples-intro">
+          <h2 class="section-title" data-i18n="samples.title">Samples</h2>
+          <div class="title-line title-line--center"></div>
+          <p class="samples-intro-lead" data-i18n="samples.lead">Professional localization for every screen — from vertical Reels to streaming and TV productions.</p>
+        </header>
+
+        <article class="sample-block sample-block--horizontal glass-card">
+          <div class="sample-block__content" data-animate="fade-up">
+            <span class="sample-tag" data-i18n="samples.hTag">16:9 · Streaming</span>
+            <div class="sample-block__title-row">
+              <h3 class="sample-block__title" data-i18n="samples.hTitle">Dubbing for Streaming</h3>
+              <div class="sample-lang">
+                <label class="sample-lang__label" for="sample-lang-h" data-i18n="samples.langLabel">Language</label>
+                <select id="sample-lang-h" class="sample-lang__select" data-sample-lang>
+                  <option value="es" data-audio="assets/audio/samples/horizontal-es.mp3" selected>Español (LATAM)</option>
+                  <option value="en" data-audio="assets/audio/samples/horizontal-en.mp3">English</option>
+                  <option value="pt" data-audio="assets/audio/samples/horizontal-pt.mp3">Português (BR)</option>
+                </select>
+              </div>
+            </div>
+            <p class="sample-block__desc" data-i18n="samples.hDesc">We offer dubbing and localization for series, films, animation, documentaries, corporate content and streaming platforms. We guarantee studio quality, voice direction and professional adaptation for every market.</p>
+            <ul class="sample-features" data-i18n-list="samples.hFeatures">
+              <li>16:9 format</li>
+              <li>Series &amp; films</li>
+              <li>Animation</li>
+              <li>Documentaries</li>
+              <li>Corporate content</li>
+              <li>Linguistic quality control</li>
+            </ul>
+            <div class="sample-platforms">
+              <span>Netflix</span><span>Prime Video</span><span>TV</span><span>Corporativo</span>
+            </div>
+          </div>
+          <div class="sample-block__media" data-animate="fade-right">
+            <div class="cinema-mockup">
+              <div class="cinema-mockup__bar cinema-mockup__bar--top" aria-hidden="true"></div>
+              <div class="sample-player sample-player--wide" data-sample-player>
+                <video
+                  class="sample-video"
+                  src="assets/videos/HORIZONTAL.mp4"
+                  playsinline
+                  webkit-playsinline
+                  muted
+                  preload="auto"
+                  controlsList="nodownload"
+                ></video>
+                <audio class="sample-audio" preload="metadata"></audio>
+                <div class="sample-overlay">
+                  <button type="button" class="sample-play-btn" aria-label="Play horizontal sample">
+                    <span class="sample-play-icon" aria-hidden="true"></span>
+                    <span data-i18n="samples.playFull">Play sample</span>
+                  </button>
+                </div>
+                <div class="sample-error" hidden>
+                  <p class="sample-error-title" data-i18n="samples.errorTitle">Could not play</p>
+                  <p class="sample-error-msg" data-i18n-html="samples.errorMsg">Use <code>iniciar-servidor.bat</code> and open <code>http://localhost:5500</code></p>
+                </div>
+              </div>
+              <div class="cinema-mockup__bar cinema-mockup__bar--bottom" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="sample-block sample-block--creators glass-card">
+          <div class="sample-block__content" data-animate="fade-up">
+            <span class="sample-tag" data-i18n="samples.cTag">Creators</span>
+            <div class="sample-block__title-row">
+              <h3 class="sample-block__title" data-i18n="samples.cTitle">Content Creator Localization</h3>
+              <div class="sample-lang">
+                <label class="sample-lang__label" for="sample-lang-c" data-i18n="samples.langLabel">Language</label>
+                <select id="sample-lang-c" class="sample-lang__select" data-sample-lang>
+                  <option value="es" data-audio="assets/audio/samples/creators-es.mp3" selected>Español (LATAM)</option>
+                  <option value="en" data-audio="assets/audio/samples/creators-en.mp3">English</option>
+                  <option value="pt" data-audio="assets/audio/samples/creators-pt.mp3">Português (BR)</option>
+                </select>
+              </div>
+            </div>
+            <p class="sample-block__desc" data-i18n="samples.cDesc">We help YouTubers, streamers and independent creators reach Latin American audiences with natural dubbing, cultural adaptation and broadcast-ready audio — without losing their unique voice.</p>
+            <ul class="sample-features" data-i18n-list="samples.cFeatures">
+              <li>YouTube &amp; streaming</li>
+              <li>Animation &amp; web series</li>
+              <li>Podcasts &amp; narration</li>
+              <li>Fast turnaround</li>
+              <li>Creator-friendly budgets</li>
+              <li>Spanish &amp; Portuguese</li>
+            </ul>
+            <div class="sample-platforms">
+              <span>YouTube</span><span>Twitch</span><span>Indie</span><span>Web series</span>
+            </div>
+          </div>
+          <div class="sample-block__media" data-animate="fade-left">
+            <div class="cinema-mockup">
+              <div class="cinema-mockup__bar cinema-mockup__bar--top" aria-hidden="true"></div>
+              <div class="sample-player sample-player--wide" data-sample-player>
+                <video
+                  class="sample-video"
+                  src="assets/videos/CREADORES.mp4"
+                  playsinline
+                  webkit-playsinline
+                  muted
+                  preload="auto"
+                  controlsList="nodownload"
+                ></video>
+                <audio class="sample-audio" preload="metadata"></audio>
+                <div class="sample-overlay">
+                  <button type="button" class="sample-play-btn" aria-label="Play creators sample">
+                    <span class="sample-play-icon" aria-hidden="true"></span>
+                    <span data-i18n="samples.playFull">Play sample</span>
+                  </button>
+                </div>
+                <div class="sample-error" hidden>
+                  <p class="sample-error-title" data-i18n="samples.errorTitle">Could not play</p>
+                  <p class="sample-error-msg" data-i18n-html="samples.errorMsg">Use <code>iniciar-servidor.bat</code> and open <code>http://localhost:5500</code></p>
+                </div>
+              </div>
+              <div class="cinema-mockup__bar cinema-mockup__bar--bottom" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="sample-block sample-block--vertical glass-card">
+          <div class="sample-block__content" data-animate="fade-up">
+            <span class="sample-tag" data-i18n="samples.vTag">9:16 · Vertical series</span>
+            <div class="sample-block__title-row">
+              <h3 class="sample-block__title" data-i18n="samples.vTitle">Dubbing for Vertical Content</h3>
+              <div class="sample-lang">
+                <label class="sample-lang__label" for="sample-lang-v" data-i18n="samples.langLabel">Language</label>
+                <select id="sample-lang-v" class="sample-lang__select" data-sample-lang>
+                  <option value="es" data-audio="assets/audio/samples/vertical-es.mp3" selected>Español (LATAM)</option>
+                  <option value="en" data-audio="assets/audio/samples/vertical-en.mp3">English</option>
+                  <option value="pt" data-audio="assets/audio/samples/vertical-pt.mp3">Português (BR)</option>
+                </select>
+              </div>
+            </div>
+            <p class="sample-block__desc" data-i18n="samples.vDesc">We adapt and dub content for high-consumption mobile platforms such as TikTok, Instagram Reels, YouTube Shorts and Facebook Reels. Our team handles translation, cultural adaptation, voice casting and professional dubbing to connect with international audiences naturally and authentically.</p>
+            <ul class="sample-features" data-i18n-list="samples.vFeatures">
+              <li>9:16 format</li>
+              <li>Professional human dubbing</li>
+              <li>Translation &amp; cultural adaptation</li>
+              <li>Lip-sync</li>
+              <li>Ready-to-publish delivery</li>
+              <li>Multiple languages available</li>
+            </ul>
+            <div class="sample-platforms">
+              <span>TikTok</span><span>Reels</span><span>Shorts</span><span>ShortMax</span>
+            </div>
+          </div>
+          <div class="sample-block__media" data-animate="fade-left">
+            <div class="phone-mockup">
+              <div class="phone-mockup__frame">
+                <div class="phone-mockup__notch" aria-hidden="true"></div>
+                <div class="phone-mockup__screen">
+                  <div class="sample-player sample-player--reel" data-sample-player>
+                    <video
+                      class="sample-video"
+                      src="assets/videos/muestra.mp4"
+                      playsinline
+                      webkit-playsinline
+                      muted
+                      preload="metadata"
+                      controlsList="nodownload"
+                    ></video>
+                    <audio class="sample-audio" preload="metadata"></audio>
+                    <div class="sample-overlay">
+                      <button type="button" class="sample-play-btn" aria-label="Play vertical sample">
+                        <span class="sample-play-icon" aria-hidden="true"></span>
+                        <span data-i18n="samples.play">Play</span>
+                      </button>
+                    </div>
+                    <div class="sample-error" hidden>
+                      <p class="sample-error-title" data-i18n="samples.errorTitle">Could not play</p>
+                      <p class="sample-error-msg" data-i18n-html="samples.errorMsg">Use <code>iniciar-servidor.bat</code> and open <code>http://localhost:5500</code></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-mockup__btn" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section clients-section" id="clientes">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <h2 class="section-title" data-i18n="clients.title">Clients</h2>
+          <div class="title-line title-line--center"></div>
+        </div>
+        <div class="clients-grid" id="clients-grid">
+          <div class="clients-row">
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/1_SATO_COMPANY_LOGO.png" alt="Sato Company" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/2_IQIYI_LOGO.png" alt="iQIYI" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/3_YOUKU_LOGO.png" alt="Youku" loading="lazy" /></div>
+          </div>
+          <div class="clients-row">
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/4_JELLO_LOGO.png" alt="Jello" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/5_RHINO_LOGO.png" alt="Rhino" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/6_SHORTMAX_LOGO.png" alt="ShortMax" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/7_DRAMABOX_LOGO.png" alt="DramaBox" loading="lazy" /></div>
+          </div>
+          <div class="clients-row">
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/7_NETSHORT_LOGO.png" alt="NetShort" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/9_REELSHORT_LOGO.png" alt="ReelShort" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/10_DRAMAWAVE_LOGO.png" alt="DramaWave" loading="lazy" /></div>
+            <div class="client-logo"><img src="assets/resources/ICOS_CLIENTES/11_GOODSHORT.png" alt="GoodShort" loading="lazy" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contacto">
+      <div class="container contact-grid">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
+          <div class="title-line"></div>
+          <p class="contact-email-label" data-i18n="contact.emailLabel">Email:</p>
+          <a href="mailto:studio@wdnes.com" class="contact-email">studio@wdnes.com</a>
+        </div>
+        <form class="contact-form" action="https://formsubmit.co/studio@wdnes.com" method="post" novalidate>
+          <div class="form-row">
+            <label for="nombre" data-i18n="form.name">Name</label>
+            <input type="text" id="nombre" name="nombre" required autocomplete="name" />
+          </div>
+          <div class="form-row">
+            <label for="email" data-i18n="form.email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <label for="mensaje" data-i18n="form.message">Message</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          </div>
+          <input type="hidden" name="_cc" value="nanamivega18@gmail.com" />
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde PixelDubbing" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn--primary" data-i18n="form.submit">Send message</button>
+          <p class="form-feedback" role="alert" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="project-modal" id="project-modal" hidden>
+    <div class="project-modal__backdrop" aria-hidden="true"></div>
+    <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+      <button type="button" class="project-modal__close" data-i18n-aria="projects.modal.close" aria-label="Close">&times;</button>
+      <div class="project-modal__layout">
+        <div class="project-modal__poster-wrap">
+          <img class="project-modal__poster" src="" alt="" />
+        </div>
+        <div class="project-modal__body">
+          <p class="project-modal__eyebrow" data-i18n="projects.modal.eyebrow">Project details</p>
+          <h3 class="project-modal__title" id="project-modal-title"></h3>
+          <ul class="project-modal__meta">
+            <li><span data-i18n="projects.modal.type">Type</span><strong class="project-modal__type"></strong></li>
+            <li><span data-i18n="projects.modal.language">Localization</span><strong class="project-modal__language"></strong></li>
+          </ul>
+          <p class="project-modal__desc"></p>
+          <div class="project-modal__actions">
+            <a class="btn btn--primary project-modal__watch" href="#" target="_blank" rel="noopener noreferrer"></a>
+            <a class="btn btn--wiki project-modal__wiki" href="#" target="_blank" rel="noopener noreferrer" data-i18n="projects.modal.more">Technical sheet</a>
+            <a class="btn btn--ghost project-modal__contact" href="#contacto" data-i18n="projects.modal.contact">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#inicio" class="logo logo--footer">
+        <img src="assets/resources/PIXEL_LOGO.png" alt="PixelDubbing" class="logo-img logo-img--footer" width="200" height="48" />
+      </a>
+      <div class="footer-links">
+        <h4 data-i18n="footer.links">Links</h4>
+        <ul>
+          <li><a href="https://x.com/PixelDubbing" target="_blank" rel="noopener noreferrer">X</a></li>
+          <li><a href="https://www.instagram.com/pixeldubbing" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">&copy; 2026 PixelDubbing.</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js?v=20260616c"></script>
+  <script src="js/theme.js?v=20260616c"></script>
+  <script src="js/projects.js?v=20260616c"></script>
+  <script src="js/clients.js?v=20260616c"></script>
+  <script src="js/hero-scene.js?v=20260616c"></script>
+  <script src="js/main.js?v=20260616c"></script>
 </body>
-
 </html>
-<!-- end document-->
